@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Healthree — Pupuk & Bibit Berkualitas</title>
+  <meta name="description" content="Healthree: Pupuk organik dan bibit tanaman unggul untuk pekebun modern.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --bg:#f6fbf6;
+      --card:#ffffff;
+      --accent:#1b5e20;
+      --accent-2:#66bb6a;
+      --muted:#6b7280;
+      --shadow:0 6px 20px rgba(34,41,47,0.08);
+      --radius:14px;
+      font-family:"Inter", system-ui, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;padding:28px;
+      background:linear-gradient(180deg,#f3fff1 0%,#f6fbf6 60%);
+      color:#0f1724;line-height:1.45;
+      overflow-x:hidden;
+    }
+    .container{max-width:1200px;margin:auto}
+
+    /* HEADER */
+    header{
+      display:flex;justify-content:space-between;align-items:center;
+      margin-bottom:28px;flex-wrap:wrap;gap:12px;
+      animation:fadeDown 1s ease;
+    }
+    @keyframes fadeDown{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}
+
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+    .logo img{
+      width:60px;height:60px;border-radius:12px;
+      object-fit:contain;box-shadow:var(--shadow);
+      background:white;padding:6px;
+    }
+    .brand-name{
+      font-family:"Poppins", sans-serif;
+      font-weight:800;
+      font-size:24px;
+      color:var(--accent);
+      letter-spacing:0.5px;
+    }
+    .brand-sub{
+      font-size:13px;
+      color:var(--muted);
+      margin-top:2px;
+    }
+    nav{display:flex;align-items:center;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;transition:0.3s;}
+    nav a:hover{background:rgba(0,0,0,0.04);color:inherit}
+
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--accent);color:white;border:0;border-radius:10px;
+      padding:10px 16px;cursor:pointer;font-weight:600;
+      box-shadow:0 8px 18px rgba(27,94,32,0.15);
+      transition:transform .25s, box-shadow .25s;
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(27,94,32,0.25)}
+    .btn.secondary{
+      background:transparent;color:var(--accent);
+      border:1px solid rgba(27,94,32,0.15);box-shadow:none;
+    }
+
+    /* HERO */
+    .hero{
+      display:grid;grid-template-columns:1fr 400px;gap:20px;align-items:center;margin-bottom:28px;
+    }
+    .hero-card{
+      background:var(--card);border-radius:var(--radius);
+      box-shadow:var(--shadow);padding:28px;
+      animation:fadeUp 1s ease forwards;
+    }
+    @keyframes fadeUp{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+
+    h1{
+      margin:0 0 6px;
+      font-size:32px;
+      line-height:1.1;
+      font-family:"Poppins", sans-serif;
+      font-weight:700;
+      color:var(--accent);
+      animation:fadeIn 1.3s ease;
+    }
+    @keyframes fadeIn{0%{opacity:0;transform:scale(0.98)}100%{opacity:1;transform:scale(1)}}
+    p.lead{margin:0;color:var(--muted)}
+
+    .search-row{display:flex;gap:12px;margin-top:20px}
+    .search{flex:1;display:flex;align-items:center;gap:8px;padding:8px;border-radius:12px;background:var(--bg);border:1px solid rgba(15,23,36,0.05)}
+    .search input{border:0;background:transparent;outline:none;padding:8px;font-size:14px;width:100%}
+    select{padding:10px;border-radius:10px;border:1px solid rgba(15,23,36,0.05);background:white}
+
+    /* PRODUK */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+    .card{
+      background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);
+      display:flex;flex-direction:column;gap:8px;transition:transform .25s;
+      animation:fadeUp 0.6s ease;
+    }
+    .card:hover{transform:translateY(-6px)}
+    .title{
+      font-weight:700;
+      color:var(--accent);
+      font-family:"Poppins", sans-serif;
+    }
+    .desc{color:var(--muted);font-size:14px}
+    .price{color:var(--accent-2);font-weight:700}
+    .tag{background:var(--accent-2);color:white;padding:4px 8px;border-radius:8px;font-size:12px;align-self:flex-start}
+
+    footer{margin-top:40px;text-align:center;color:var(--muted);font-size:13px;animation:fadeUp 1s ease;}
+    .socials a{color:var(--accent-2);font-size:20px;margin:0 8px;text-decoration:none;transition:color .3s}
+    .socials a:hover{color:var(--accent)}
+
+    /* WA FLOAT BUTTON */
+    .wa-float{
+      position:fixed;
+      bottom:22px;
+      right:22px;
+      background-color:#25d366;
+      color:#fff;
+      border-radius:50%;
+      width:60px;
+      height:60px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:30px;
+      box-shadow:0 8px 18px rgba(0,0,0,0.2);
+      z-index:999;
+      transition:transform .3s ease, box-shadow .3s ease;
+      animation:floatIn 1.2s ease forwards;
+    }
+    @keyframes floatIn{0%{opacity:0;transform:translateY(20px)}100%{opacity:1;transform:translateY(0)}}
+    .wa-float:hover{
+      transform:scale(1.1);
+      box-shadow:0 12px 24px rgba(0,0,0,0.3);
+    }
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="#" class="brand">
+        <div class="logo">
+          <img src="logo-healthree.png" alt="Logo Healthree">
+        </div>
+        <div>
+          <div class="brand-name">Healthree</div>
+          <div class="brand-sub">Pupuk & Bibit Unggul</div>
+        </div>
+      </a>
+      <nav>
+        <a href="#products">Produk</a>
+        <a href="#about">Tentang</a>
+        <a href="#contact">Kontak</a>
+        <button class="btn">🛒 Keranjang</button>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Pupuk & Bibit Tanaman Terbaik dari Healthree</h1>
+        <p class="lead">Temukan berbagai jenis pupuk dan bibit unggul untuk hasil panen sehat dan berkelanjutan.</p>
+
+        <div class="search-row">
+          <div class="search">🔍 <input id="search" placeholder="Cari pupuk atau bibit..."></div>
+          <select id="category">
+            <option value="">Semua</option>
+            <option value="pupuk">Pupuk</option>
+            <option value="bibit">Bibit</option>
+          </select>
+        </div>
+        <div style="margin-top:18px;">
+          <button class="btn">Belanja Sekarang</button>
+          <button class="btn secondary">Lihat Promo</button>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <strong>Promo!</strong> Diskon <b>15%</b> untuk pembelian pertama. Gunakan kode <code>HEALTHREE15</code>
+      </div>
+    </section>
+
+    <section id="products">
+      <h2 style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--accent);">Produk Unggulan</h2>
+      <div class="grid" id="product-grid"></div>
+    </section>
+
+    <section id="about" style="margin-top:28px">
+      <div class="hero-card">
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--accent);">Tentang Healthree</h3>
+        <p class="lead">Healthree berkomitmen menyediakan produk ramah lingkungan untuk mendukung pertanian modern. Dari pupuk organik hingga bibit unggulan, semua dikurasi dengan kualitas terbaik.</p>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:28px">
+      <div class="hero-card">
+        <h3 style="font-family:'Poppins',sans-serif;font-weight:700;color:var(--accent);">Hubungi Kami</h3>
+        <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:farhanfitriansyah342@gmail.com">farhanfitriansyah342@gmail.com</a></p>
+        <p><i class="fa-brands fa-instagram"></i> Instagram: <a href="https://instagram.com/frhnftrnsyh" target="_blank">@frhnftrnsyh</a></p>
+        <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/6281227496346" target="_blank">081227496346</a></p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Healthree • Semua hak dilindungi.</div>
+      <div class="socials">
+        <a href="https://instagram.com/frhnftrnsyh" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/6281227496346" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Tombol WhatsApp Melayang -->
+  <a href="https://wa.me/6281227496346" class="wa-float" target="_blank" title="Chat via WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script>
+    const PRODUCTS = [
+      {id:'1',name:'Pupuk Organik Cair 1L',category:'pupuk',price:45000,desc:'Pupuk organik cair kaya nutrisi mikro.'},
+      {id:'2',name:'Pupuk Kompos 10kg',category:'pupuk',price:60000,desc:'Kompos alami meningkatkan struktur tanah.'},
+      {id:'3',name:'Pupuk NPK 5-5-5 1kg',category:'pupuk',price:38000,desc:'Nutrisi seimbang untuk pertumbuhan tanaman.'},
+      {id:'4',name:'Pupuk Daun Cair 500ml',category:'pupuk',price:35000,desc:'Meningkatkan kehijauan daun tanaman.'},
+      {id:'5',name:'Bibit Tomat Unggul (10pcs)',category:'bibit',price:25000,desc:'Tahan penyakit dan produktif.'},
+      {id:'6',name:'Bibit Cabai Rawit (15pcs)',category:'bibit',price:28000,desc:'Bibit pedas cepat berbuah.'},
+      {id:'7',name:'Bibit Bayam Hijau (20pcs)',category:'bibit',price:18000,desc:'Cepat tumbuh dan bergizi tinggi.'},
+      {id:'8',name:'Bibit Kangkung Air (25pcs)',category:'bibit',price:17000,desc:'Cepat panen dan mudah dirawat.'},
+      {id:'9',name:'Bibit Seledri (15pcs)',category:'bibit',price:22000,desc:'Daun aromatik segar untuk dapur sehat.'},
+      {id:'10',name:'Bibit Sawi Hijau (20pcs)',category:'bibit',price:19000,desc:'Tahan cuaca dan cepat panen.'}
+    ];
+
+    const grid=document.getElementById('product-grid');
+    const search=document.getElementById('search');
+    const category=document.getElementById('category');
+    const year=document.getElementById('year');
+    year.textContent=new Date().getFullYear();
+
+    const money=n=>'Rp'+n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+
+    function render(list){
+      grid.innerHTML='';
+      list.forEach(p=>{
+        const el=document.createElement('div');
+        el.className='card';
+        el.innerHTML=`
+          <div class="title">${p.name}</div>
+          <div class="desc">${p.desc}</div>
+          <div class="price">${money(p.price)}</div>
+          <div class="tag">${p.category}</div>
+        `;
+        grid.appendChild(el);
+      });
+    }
+    render(PRODUCTS);
+
+    function filter(){
+      const q=search.value.toLowerCase();
+      const c=category.value;
+      const list=PRODUCTS.filter(p=>{
+        const matchQ=p.name.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q);
+        const matchC=!c||p.category===c;
+        return matchQ&&matchC;
+      });
+      render(list);
+    }
+    search.addEventListener('input',filter);
+    category.addEventListener('change',filter);
+  </script>
+</body>
+</html>
